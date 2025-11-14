@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="web_automationexercise.commons">
+    <Properties>
+        <Property name="unitime">$${date:dd-MM-YYYY_HH-mm-ss}</Property>
+        <Property name="pattern">[%d{dd-MM-YYYY HH:mm:ss.SSS} %level %logger{36}] - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}" />
+        </Console>
+
+<!--        <File name="FixedFile" fileName="logs/Fixed.txt" append="true">-->
+        <File name="FixedFile" fileName="logs/Fixed.${unitime}.txt" append="true">
+            <PatternLayout pattern="${pattern}" />
+        </File>
+
+        <File name="RandomFile" fileName="logs/Random.${unitime}.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="${pattern}" />
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FixedFile"/>
+            <AppenderRef ref="RandomFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

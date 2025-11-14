@@ -1,0 +1,176 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+<!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+<!--    <modelVersion>4.0.0</modelVersion>-->
+
+<!--    <groupId>web_automationexercise</groupId>-->
+<!--    <artifactId>auto-framework</artifactId>-->
+<!--    <version>1.0-SNAPSHOT</version>-->
+
+<!--    <properties>-->
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+
+<!--        &lt;!&ndash; Library versions &ndash;&gt;-->
+<!--        <selenium.version>4.37.0</selenium.version>-->
+<!--        <testng.version>7.11.0</testng.version>-->
+<!--        <allure.version>2.30.0</allure.version>-->
+<!--        <aspectj.version>1.9.24</aspectj.version>-->
+<!--        <slf4j.version>2.0.17</slf4j.version>-->
+<!--        <log4j2.version>2.25.2</log4j2.version>-->
+<!--        <jackson.version>2.17.2</jackson.version>-->
+
+<!--        &lt;!&ndash; Plugin versions &ndash;&gt;-->
+<!--&lt;!&ndash;        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <allure-maven-plugin.version>2.16.1</allure-maven-plugin.version>&ndash;&gt;-->
+
+<!--        &lt;!&ndash; Allure output &ndash;&gt;-->
+<!--        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>-->
+<!--    </properties>-->
+
+<!--    <dependencies>-->
+<!--        &lt;!&ndash; Selenium (đủ tất cả driver client APIs) &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <version>${selenium.version}</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Jackson cho JSON &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--            <artifactId>jackson-databind</artifactId>-->
+<!--            <version>${jackson.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--            <artifactId>jackson-core</artifactId>-->
+<!--            <version>${jackson.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--            <artifactId>jackson-annotations</artifactId>-->
+<!--            <version>${jackson.version}</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; TestNG &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.testng</groupId>-->
+<!--            <artifactId>testng</artifactId>-->
+<!--            <version>${testng.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Allure adapter cho TestNG &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-testng</artifactId>-->
+<!--            <version>${allure.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; (tuỳ chọn) Dùng chung tiện ích Allure; để test scope &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-java-commons</artifactId>-->
+<!--            <version>${allure.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; AspectJ weaver: để @Step hiển thị đầy đủ (LTW) &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>aspectjweaver</artifactId>-->
+<!--            <version>${aspectj.version}</version>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Logging: SLF4J -> Log4j2 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-api</artifactId>-->
+<!--            <version>${slf4j.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-slf4j2-impl</artifactId>-->
+<!--            <version>${log4j2.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-core</artifactId>-->
+<!--            <version>${log4j2.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-api</artifactId>-->
+<!--            <version>${log4j2.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; Bridge cho thư viện dùng commons-logging (nếu có) &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>jcl-over-slf4j</artifactId>-->
+<!--            <version>${slf4j.version}</version>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.testng</groupId>-->
+<!--            <artifactId>testng</artifactId>-->
+<!--            <version>7.11.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-java-commons</artifactId>-->
+<!--            <version>2.30.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>${maven-compiler-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <source>${maven.compiler.source}</source>-->
+<!--                    <target>${maven.compiler.target}</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>${maven-surefire-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; trỏ đúng file suite &ndash;&gt;-->
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>src/test/resources/testNG_automationexercise.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
+
+<!--                    &lt;!&ndash; nơi Allure adapter ghi kết quả &ndash;&gt;-->
+<!--                    <systemPropertyVariables>-->
+<!--                        <allure.results.directory>${allure.results.directory}</allure.results.directory>-->
+<!--                    </systemPropertyVariables>-->
+
+<!--                    &lt;!&ndash; bật LTW cho @Step &ndash;&gt;-->
+<!--                    <argLine>-->
+<!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
+<!--                    </argLine>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            &lt;!&ndash; Plugin tạo báo cáo Allure &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>io.qameta.allure</groupId>-->
+<!--                <artifactId>allure-maven</artifactId>-->
+<!--                <version>${allure-maven-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <reportVersion>${allure.version}</reportVersion>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+
+<!--</project>-->

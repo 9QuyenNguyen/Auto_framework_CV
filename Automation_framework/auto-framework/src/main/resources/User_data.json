@@ -1,0 +1,17 @@
+{
+  "email": "autotest@email.com",
+  "password": "StrongP@ssw0rd",
+  "dobDay": "12",
+  "dobMonth": "March",
+  "dobYear": "1995",
+
+  "firstName": "Amit",
+  "lastName": "Kumar",
+  "company": "Auto Co.",
+  "address1": "123 MG Road",
+  "country": "Canada",
+  "state": "Kartaka",
+  "city": "Bengaluru",
+  "zipcode": "560001",
+  "mobile": "9123789"
+}

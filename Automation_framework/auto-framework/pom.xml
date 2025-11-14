@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>web_automationexercise</groupId>
+    <artifactId>auto-framework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>auto-framework</name>
+    <description>UI automation framework with Selenium, TestNG, ExtentReports</description>
+
+    <properties>
+        <!-- Java & encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <!-- Library versions -->
+        <selenium.version>4.37.0</selenium.version>
+        <testng.version>7.11.0</testng.version>
+        <extentreports.version>5.1.1</extentreports.version>
+        <jackson.version>2.17.2</jackson.version>
+        <poi.version>5.2.5</poi.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <log4j2.version>2.25.2</log4j2.version>
+
+        <!-- Plugin versions -->
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+    </properties>
+
+    <dependencies>
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ExtentReports core -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extentreports.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- (Tuỳ chọn) Adapter TestNG sẵn có của Extent
+             Nếu dùng adapter này, thêm listener vào testng.xml:
+             <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"/>
+        -->
+        <!--
+        <dependency>
+          <groupId>com.aventstack</groupId>
+          <artifactId>extentreports-testng-adapter</artifactId>
+          <version>1.2.2</version>
+          <scope>test</scope>
+        </dependency>
+        -->
+
+        <!-- Jackson (đọc JSON data) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- Apache POI (đọc Excel messages/test data) -->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.poi</groupId>-->
+<!--            <artifactId>poi</artifactId>-->
+<!--            <version>${poi.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.poi</groupId>-->
+<!--            <artifactId>poi-ooxml</artifactId>-->
+<!--            <version>${poi.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+        <!-- Logging: SLF4J -> Log4j2 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+
+        <!-- Bridge cho thư viện legacy dùng commons-logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compile -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Chạy TestNG suite -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <!-- Trỏ đúng file suite TestNG -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testNG_automationexercise.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                    <!-- Truyền thêm system properties nếu cần:
+                         <systemPropertyVariables>
+                           <env>stg</env>
+                         </systemPropertyVariables>
+                    -->
+                    <!-- KHÔNG dùng -javaagent/aspectj; KHÔNG cấu hình Allure -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

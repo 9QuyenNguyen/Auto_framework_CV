@@ -1,0 +1,27 @@
+[15-11-2025 00:32:04.781 INFO web_automationexercise.pages_Actions.DashBoard] - wait and click Sign Up Login
+[15-11-2025 00:32:16.010 INFO web_automationexercise.pages_Actions.Login] - verify Text New User Signup Visible
+[15-11-2025 00:32:16.034 INFO web_automationexercise.pages_Actions.Login] - enter Name: Amit And Email: autotest@email.com
+[15-11-2025 00:32:16.293 INFO web_automationexercise.pages_Actions.Login] - click SignUp button
+[15-11-2025 00:32:17.488 INFO web_automationexercise.pages_Actions.SignUp] - verify name is displayed
+[15-11-2025 00:32:17.519 INFO web_automationexercise.pages_Actions.SignUp] - verify email is displayed
+[15-11-2025 00:32:17.540 INFO web_automationexercise.pages_Actions.SignUp] - wait and click to title Mrs
+[15-11-2025 00:32:17.751 INFO web_automationexercise.pages_Actions.SignUp] - enter password
+[15-11-2025 00:32:17.895 INFO web_automationexercise.pages_Actions.SignUp] - select date of birth
+[15-11-2025 00:32:18.420 INFO web_automationexercise.pages_Actions.SignUp] - enter first name
+[15-11-2025 00:32:18.577 INFO web_automationexercise.pages_Actions.SignUp] - enter last name
+[15-11-2025 00:32:18.733 INFO web_automationexercise.pages_Actions.SignUp] - enter address
+[15-11-2025 00:32:18.866 INFO web_automationexercise.pages_Actions.SignUp] - enter country
+[15-11-2025 00:32:19.034 INFO web_automationexercise.pages_Actions.SignUp] - enter state
+[15-11-2025 00:32:19.258 INFO web_automationexercise.pages_Actions.SignUp] - enter city
+[15-11-2025 00:32:19.475 INFO web_automationexercise.pages_Actions.SignUp] - enter zip code
+[15-11-2025 00:32:19.667 INFO web_automationexercise.pages_Actions.SignUp] - enter mobile number
+[15-11-2025 00:32:19.810 INFO web_automationexercise.pages_Actions.SignUp] - click create account button
+[15-11-2025 00:32:21.167 INFO web_automationexercise.pages_Actions.SignUp] - verify account created is displayed
+[15-11-2025 00:32:21.203 INFO web_automationexercise.pages_Actions.SignUp] - click Continue button
+[15-11-2025 00:32:23.088 INFO web_automationexercise.pages_Actions.DashBoard] - verify Logged As User Name Is Displayed
+[15-11-2025 00:32:23.188 INFO web_automationexercise.pages_Actions.DashBoard] - wait and click Delete Button
+[15-11-2025 00:32:23.894 INFO web_automationexercise.pages_Actions.DashBoard] - verify Delete Account Button is displayed
+[15-11-2025 00:32:23.931 INFO web_automationexercise.pages_Actions.DashBoard] - wait and click Continue Button to delete
+[15-11-2025 00:32:25.641 INFO Sign_up_test] - OS name = windows 11
+[15-11-2025 00:32:25.641 INFO Sign_up_test] - Driver instance name = chromedriver: chrome on windows (10fdb9f50ac30a0d605800d92835276d)
+[15-11-2025 00:32:25.642 INFO Sign_up_test] - Command Line = taskkill /F /FI 'IMAGENAME eq chromedriver*'
