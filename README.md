@@ -6,7 +6,6 @@ This project is an automation framework designed for web automationexercise test
 ## Table of Contents
 - [Overview](#overview)
 - [Project Structure](#project-structure)
-- [Class Hierarchy](#class-structure)
 - [Key Features](#key-features)
 - [Prerequisites](#prerequisites)
 - [Setup](#installation--setup)
@@ -41,25 +40,6 @@ A comprehensive **Java-based UI automation framework** built with **Selenium Web
 │   │   └── resources/             [Test configuration files]
 ├── target/                        [Generated files and reports]
 ├── test-output/                   [TestNG output reports]
-```
-
----
-
-### Class Hierarchy
-
-```
-BaseTest (Setup/Teardown)
-    └── Sign_up_test (Test Cases)
-
-BasePage (Common element interactions)
-    ├── Login_UI (Login page locators)
-    ├── SignUp_UI (Sign-up page locators)
-    └── DashBoard_UI (Dashboard page locators)
-
-Base_Actions (WebDriver operations)
-    ├── Login (Login page actions)
-    ├── SignUp (Sign-up page actions)
-    └── DashBoard (Dashboard page actions)
 ```
 
 ---
